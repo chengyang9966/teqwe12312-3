@@ -1,0 +1,50 @@
+{
+  "name": "sy-scheduler",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.ts",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "local": "dotenv -e .env.local -- nodemon --exec npx ts-node --files index.ts",
+    "db:update:local": "dotenv -e .env.local -- npx aurora && prisma format",
+    "db:migrate:local": "dotenv -e .env.local -- npx prisma migrate dev",
+    "db:generate:local": "dotenv -e .env.local -- npx prisma generate dev",
+    "db:reset:local": "dotenv -e .env.local -- npx prisma migrate reset",
+    "db:seed:local": "dotenv -e .env.local -- ts-node prisma/seed",
+    "prepare": "husky install",
+    "lint": "prettier 'src/**/*.{js,ts,mjs,cjs,json}' --check",
+    "lint:fix": "prettier 'src/**/*.{js,ts,mjs,cjs,json}' --write"
+  },
+  "keywords": [],
+  "author": "Cheng Yang Ong",
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/FirebirdIT/sy-scheduler.git"
+  },
+  "dependencies": {
+    "@prisma/client": "^5.4.2",
+    "axios": "^1.5.1",
+    "dotenv": "^16.3.1",
+    "dotenv-cli": "^7.3.0",
+    "express": "^4.18.2",
+    "http-errors": "^2.0.0",
+    "moment": "^2.29.4",
+    "node-schedule": "^2.1.1",
+    "prisma-aurora": "^1.3.9",
+    "ts-node": "^10.9.1",
+    "tslib": "^2.6.2",
+    "zod": "^3.22.4"
+  },
+  "devDependencies": {
+    "@types/http-errors": "^2.0.2",
+    "@types/node": "^20.8.4",
+    "@types/node-schedule": "^2.1.1",
+    "@types/tx2": "^1.0.1",
+    "husky": "^8.0.0",
+    "lint-staged": "^14.0.1",
+    "prettier": "^3.0.3",
+    "prisma": "^5.4.2",
+    "tx2": "^1.0.5"
+  }
+}

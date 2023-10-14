@@ -1,0 +1,16 @@
+{
+    "compilerOptions": {
+      "noImplicitAny": false,
+      "module": "CommonJS",
+      "target": "ESNext",
+      "lib": ["ESNext", "DOM"],
+      "moduleResolution": "Node",
+      "importHelpers": true,
+      "esModuleInterop": true,
+      "skipLibCheck": true,
+      "allowSyntheticDefaultImports": true,
+      "outDir": "dist",
+    },
+    "include": ["**/*", "typings.d.ts"],
+    "exclude": ["node_modules"]
+  }

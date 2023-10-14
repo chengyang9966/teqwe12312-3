@@ -1,0 +1,10 @@
+model Scheduler {
+    id        String   @id @default(uuid())
+    name      String
+    schedule  String
+    status    Boolean  @default(true)
+    createAt  DateTime @default(now())
+    updatedAt DateTime @updatedAt
+
+    @@unique([name, schedule, status])
+}
